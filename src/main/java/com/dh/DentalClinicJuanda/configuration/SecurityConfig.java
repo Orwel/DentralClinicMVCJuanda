@@ -31,6 +31,7 @@ public class SecurityConfig {
                         .requestMatchers("/dentists", "/dentists/**").permitAll() // Allow access to /dentists endpoints
                         .requestMatchers("/patients", "/patients/**").permitAll() // Allow access to /patients endpoints
                         .requestMatchers("/..").permitAll() // Add more endpoints here
+                        .requestMatchers("/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session // Aqui se configura la politica de manejo de sesiones
